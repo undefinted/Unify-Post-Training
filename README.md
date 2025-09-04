@@ -147,6 +147,7 @@ Our project mainly builds upon [LUFFY](https://github.com/ElliottYan/LUFFY) and 
 For questions about this work, please contact:
 
 - Xingtai Lv: lvxt24@mails.tsinghua.edu.cn
+- Youbang Sun: ybsun@mail.tsinghua.edu.cn
 - Ning Ding: dn97@mail.tsinghua.edu.cn
 
 # 🎈Citation
