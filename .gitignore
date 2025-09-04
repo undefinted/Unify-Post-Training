@@ -1,7 +1,6 @@
 
 **/*.pt
 **/checkpoints
-**/checkpoint
 **/wget-log
 **/_build/
 **/*.ckpt
@@ -128,6 +127,5 @@ logs
 log
 outputs
 
-**/checkpoint
 **/hpt/verl/outputs
 **/hpt/verl/swanlog
