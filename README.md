@@ -2,7 +2,7 @@
 
 # Towards a Unified View of Large Language Model Post-Training
 
-[![Paper](https://img.shields.io/badge/paper-A42C25?style=for-the-badge&logo=arxiv&logoColor=white)](https://arxiv.org/abs/)  [![Github](https://img.shields.io/badge/Unify--Post--Training-000000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/telxt/Unified-FT)
+[![Paper](https://img.shields.io/badge/paper-A42C25?style=for-the-badge&logo=arxiv&logoColor=white)](https://arxiv.org/abs/)  [![Github](https://img.shields.io/badge/Unify--Post--Training-000000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/TsinghuaC3I/Unify-Post-Training)
 
 </div>
 
