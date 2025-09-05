@@ -30,7 +30,7 @@ REMOVE_SFTED_DATA=False
 MAX_GRAD_NORM=80.0
 
 LR=5e-6
-MODEL=Qwen2.5-Math-7B
+MODEL=Qwen2.5-Math-7B # Following LUFFY, rope_theta should be reset to 40000 and max_position_embeddings to 16384 
 EXP_NAME="${DATE}_${UNIFY_STRATEGY}-${OFFLINE_LOSS_TYPE}-${SFT_LOSS_COEF}_${MODEL}_gate@${SWITCH_GATE}_lr@${LR}_${TIME_TAG}"
 MODEL_PATH=/fs-computility/prime/zuoyuxin/llms/$MODEL
 DATA_DIR=$ROOT/data/
