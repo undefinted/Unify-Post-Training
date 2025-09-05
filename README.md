@@ -155,13 +155,10 @@ For questions about this work, please contact:
 If you find this work helpful, please cite our paper:
 
 ```bibtex
-@misc{lv2025unifiedviewlargelanguage,
-      title={Towards a Unified View of Large Language Model Post-Training}, 
-      author={Xingtai Lv and Yuxin Zuo and Youbang Sun and Hongyi Liu and Yuntian Wei and Zhekai Chen and Lixuan He and Xuekai Zhu and Kaiyan Zhang and Bingning Wang and Ning Ding and Bowen Zhou},
-      year={2025},
-      eprint={2509.04419},
-      archivePrefix={arXiv},
-      primaryClass={cs.LG},
-      url={https://arxiv.org/abs/2509.04419}, 
+@article{lv2025towards,
+  title={Towards a unified view of large language model post-training},
+  author={Lv, Xingtai and Zuo, Yuxin and Sun, Youbang and Liu, Hongyi and Wei, Yuntian and Chen, Zhekai and He, Lixuan and Zhu, Xuekai and Zhang, Kaiyan and Wang, Bingning and Ding, Ning and Zhou, Bowen},
+  journal={arXiv preprint arXiv:2509.04419},
+  year={2025}
 }
 ```
