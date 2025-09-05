@@ -23,8 +23,8 @@ export WANDB_PROJECT="unified-ft"
 
 UNIFY_STRATEGY="no"
 SWITCH_GATE=0
-SWITCH_GATE_OFF=0 # 对于2阶段的switch：SWITCH_GATE_OFF=SWITCH_GATE
-OFFLINE_LOSS_TYPE="srft" # 对于2阶段的switch：off_policy, sft
+SWITCH_GATE_OFF=0
+OFFLINE_LOSS_TYPE="srft"
 
 LR=1e-6
 MODEL=Qwen2.5-Math-7B

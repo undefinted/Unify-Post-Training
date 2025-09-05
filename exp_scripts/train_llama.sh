@@ -23,10 +23,10 @@ export WANDB_PROJECT="unified-ft"
 
 UNIFY_STRATEGY="switch"
 SWITCH_GATE=2
-SWITCH_GATE_OFF=2 # 对于2阶段的switch：SWITCH_GATE_OFF=SWITCH_GATE
-OFFLINE_LOSS_TYPE="sft" # 对于2阶段的switch：off_policy, sft, switch_off_sft（switch_off_sft表示对offline data使用sft和off rl混合loss）
+SWITCH_GATE_OFF=2
+OFFLINE_LOSS_TYPE="sft"
 SFT_LOSS_COEF=1.0
-REMOVE_SFTED_DATA=False # 置为True就启动了删除已经sft过的数据的逻辑
+REMOVE_SFTED_DATA=False
 
 LR=5e-6
 MODEL=Llama-3.1-8B
