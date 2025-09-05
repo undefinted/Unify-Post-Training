@@ -2,7 +2,7 @@
 
 # Towards a Unified View of Large Language Model Post-Training
 
-[![Paper](https://img.shields.io/badge/paper-A42C25?style=for-the-badge&logo=arxiv&logoColor=white)](https://arxiv.org/abs/)  [![Github](https://img.shields.io/badge/Unify--Post--Training-000000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/TsinghuaC3I/Unify-Post-Training)
+[![Paper](https://img.shields.io/badge/paper-A42C25?style=for-the-badge&logo=arxiv&logoColor=white)](https://arxiv.org/abs/2509.04419)  [![Github](https://img.shields.io/badge/Unify--Post--Training-000000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/TsinghuaC3I/Unify-Post-Training)
 
 </div>
 
@@ -155,9 +155,13 @@ For questions about this work, please contact:
 If you find this work helpful, please cite our paper:
 
 ```bibtex
-@article{lv2025towards,
-  title={Towards a unified view of large language model post-training},
-  author={Lv, Xingtai and Zuo, Yuxin and Sun, Youbang and Liu, Hongyi and Wei, Yuntian and Chen, Zhekai and He, Lixuan and Zhu, Xuekai and Wang, Bingning and Ding, Ning and Zhou, Bowen},
-  year={2025}
+@misc{lv2025unifiedviewlargelanguage,
+      title={Towards a Unified View of Large Language Model Post-Training}, 
+      author={Xingtai Lv and Yuxin Zuo and Youbang Sun and Hongyi Liu and Yuntian Wei and Zhekai Chen and Lixuan He and Xuekai Zhu and Kaiyan Zhang and Bingning Wang and Ning Ding and Bowen Zhou},
+      year={2025},
+      eprint={2509.04419},
+      archivePrefix={arXiv},
+      primaryClass={cs.LG},
+      url={https://arxiv.org/abs/2509.04419}, 
 }
 ```
