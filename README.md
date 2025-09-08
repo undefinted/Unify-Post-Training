@@ -156,8 +156,8 @@ If you find this work helpful, please cite our paper:
 
 ```bibtex
 @article{lv2025towards,
-  title={Towards a unified view of large language model post-training},
-  author={Lv, Xingtai and Zuo, Yuxin and Sun, Youbang and Liu, Hongyi and Wei, Yuntian and Chen, Zhekai and He, Lixuan and Zhu, Xuekai and Zhang, Kaiyan and Wang, Bingning and Ding, Ning and Zhou, Bowen},
+  title={Towards a Unified View of Large Language Model Post-Training},
+  author={Lv, Xingtai and Zuo, Yuxin and Sun, Youbang and Liu, Hongyi and Wei, Yuntian and Chen, Zhekai and He, Lixuan and Zhu, Xuekai and Zhang, Kaiyan and Wang, Bingning and others},
   journal={arXiv preprint arXiv:2509.04419},
   year={2025}
 }
