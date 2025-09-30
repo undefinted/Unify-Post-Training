@@ -4,6 +4,8 @@ TIME_TAG=$(date +%H:%M)
 
 ray stop
 # ------------------------------------------------------------------------------------------------
+ROOT=/home/sunwanran/code/tmp/Counterfactual-Reasoning/Unify-Post-Training
+
 export PYTHONPATH=$ROOT:$PYTHONPATH
 
 export HF_ENDPOINT=https://hf-mirror.com
@@ -13,13 +15,12 @@ export NO_PROXY="127.0.0.1,localhost"
 # Set XFormers backend to avoid CUDA errors
 export VLLM_ATTENTION_BACKEND=XFORMERS
 
-source activate uft
-# ------------------------------------------------------------------------------------------------
-# NOTE: change to your root dir
-ROOT=../Unify-Post-Training
+# source activate uft
+conda activate hpt
 
-# export SWANLAB_API_KEY='xxx' 
-export WANDB_PROJECT="unified-ft"
+# ------------------------------------------------------------------------------------------------
+export SWANLAB_API_KEY='tnfa0lzoA9jCmLJRUuFkb' 
+export WANDB_PROJECT="Counterfactual_unified-ft"
 
 UNIFY_STRATEGY="switch"
 SWITCH_GATE=0
@@ -30,16 +31,17 @@ REMOVE_SFTED_DATA=False
 MAX_GRAD_NORM=80.0
 
 LR=5e-6
-MODEL=Qwen2.5-Math-7B # Following LUFFY, rope_theta should be reset to 40000 and max_position_embeddings to 16384 
+# MODEL=Qwen2.5-Math-7B # Following LUFFY, rope_theta should be reset to 40000 and max_position_embeddings to 16384 
+MODEL=Qwen2.5-VL-3B
 EXP_NAME="${DATE}_${UNIFY_STRATEGY}-${OFFLINE_LOSS_TYPE}-${SFT_LOSS_COEF}_${MODEL}_gate@${SWITCH_GATE}_lr@${LR}_${TIME_TAG}"
-MODEL_PATH=/fs-computility/prime/zuoyuxin/llms/$MODEL
+MODEL_PATH=/home/maxinyu/ckpt/Qwen2.5-VL-3B-Instruct
 DATA_DIR=$ROOT/data/
 
 cd $ROOT/hpt/verl/
 mkdir -p $ROOT/checkpoints/$EXP_NAME
 
-TRAIN_FILE=${TRAIN_FILE:-"${DATA_DIR}/openr1.parquet"}
-TEST_FILE=${TEST_FILE:-["${DATA_DIR}/AIME24/test.parquet","${DATA_DIR}/AMC23/test.parquet","${DATA_DIR}/MATH-500/test.parquet"]}
+TRAIN_FILE=${TRAIN_FILE:-["${DATA_DIR}/Counterfactual-Reasoning/C-VQA-Real_train.parquet","${DATA_DIR}/Counterfactual-Reasoning/C-VQA-Synthetic_train.parquet","${DATA_DIR}/Counterfactual-Reasoning/MARS_Bench_train.parquet"]}
+TEST_FILE=${TEST_FILE:-["${DATA_DIR}/Counterfactual-Reasoning/C-VQA-Real_test.parquet","${DATA_DIR}/Counterfactual-Reasoning/C-VQA-Synthetic_test.parquet","${DATA_DIR}/Counterfactual-Reasoning/MARS_Bench_test.parquet"]}
 
 python3 -m verl.mix_src.main_mix_ppo \
     algorithm.adv_estimator=grpo \
@@ -51,7 +53,7 @@ python3 -m verl.mix_src.main_mix_ppo \
     data.max_response_length=8192 \
     actor_rollout_ref.model.path=$MODEL_PATH \
     actor_rollout_ref.actor.optim.lr=$LR \
-    actor_rollout_ref.model.use_remove_padding=True \
+    actor_rollout_ref.model.use_remove_padding=False \
     actor_rollout_ref.actor.ppo_mini_batch_size=64 \
     actor_rollout_ref.actor.ppo_micro_batch_size=64 \
     actor_rollout_ref.actor.use_dynamic_bsz=True \

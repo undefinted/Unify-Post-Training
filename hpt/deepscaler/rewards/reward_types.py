@@ -10,14 +10,24 @@ from enum import Enum
 class RewardConfig:
     # Use LLM as ORM to evaluate correctness.
     use_math_orm: bool = False
-    
     # General reward constants.
     correct_reward: float = 1.0
     incorrect_reward: float = -1.0
     format_error_reward: float = -1.0
     unk_error_reward: float = -1.0
-
     think_format: bool = True
+    """
+    配置不同奖励函数在计算总奖励时的权重。
+    """
+    # 主要奖励：答案准确性的权重
+    accuracy_weight: float = 1.0
+    # 辅助奖励/惩罚的权重
+    # 格式奖励：鼓励模型遵循特定输出格式（如<think><answer>）
+    format_weight: float = 0.2
+    # 重复惩罚：惩罚模型生成重复冗余的内容
+    repetition_penalty_weight: float = 0.1
+    # 长度奖励：基于生成长度的奖励（可选，可用于鼓励简洁或详细的回答）
+    length_reward_weight: float = 0.05
 
 
 class RewardType(Enum):
@@ -50,6 +60,8 @@ class RewardInput:
     model_response: str
     problem_type: RewardType = RewardType.UNK
     ground_truth: dict = field(default_factory=dict)
+    image_paths: List[str] = field(default_factory=list) # 传入图片路径
+    metadata: Dict[str, Any] = field(default_factory=dict) # 传递额外信息，如 accu_reward_method
 
 
 @dataclass
